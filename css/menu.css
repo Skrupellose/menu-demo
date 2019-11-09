@@ -1,0 +1,84 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	list-style: none;
+	text-decoration: none;
+	/* 文本修饰 */
+}
+.middle{
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+}
+.menu{
+	width: 300px;
+	border-radius: 15px;
+	overflow: hidden;
+	
+}
+.item{
+	border-top:1px solid #2980b9;
+	overflow: hidden;
+}
+.btn{
+	display: block;
+	padding: 16px 20px;
+	background-color: #3498DB;
+	position: relative;
+	color: white;
+}
+.btn:before{
+	content: "";
+	position: absolute;
+	width: 14px;
+	height: 14px;
+	background-color: #3498DB;
+	left:20px;
+	bottom: -2px;
+	/* 把 */
+	transform: rotate(45deg);
+	/* 把元素绕中心旋转45° */
+} 
+.btn i{
+	margin-right: 15px;
+}
+.smenu{
+	background-color: #333;
+	 overflow: hidden; 
+	transition: max-height 0.3s;
+	max-height: 0;
+}
+.smenu a{
+	display: block;
+	padding: 16px 26px;
+	color: white;
+	font-size: 14px;
+	position: relative;
+	margin: 4px 0
+}
+.smenu a:before{
+	content: "";
+	position: absolute;
+	width: 8px;
+	height: 100%;
+	left:0;
+	top:0;
+	background-color: #3498DB;
+	transition: 0.3s;
+	opacity: 0;
+}
+.smenu a:hover:before{
+	opacity: 1;
+}
+:target .smenu{
+	max-height: 10em;
+	color: red;
+	/* 点击锚点赋予后面元素新的样式 */
+}
+:target .smenu a{
+	color: wheat;
+	/* 点击锚点赋予锚元素新的样式 */
+	/* target元素就是自己id被用于锚链接的元素 */
+}
